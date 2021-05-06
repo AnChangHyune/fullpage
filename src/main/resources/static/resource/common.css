@@ -1,0 +1,541 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto:900,400);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+/**
+* Tools  
+*/
+/**
+* Settings 
+*/
+/**
+* Generic 
+*/
+html, body {
+  min-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  background: #f0f0f0;
+  color: #212121;
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+/*
+* Components
+*/
+.topbar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: #05384C;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  height: 3em;
+  line-height: 3em;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  
+  
+}
+.topbar a {
+  display: block;
+  color: #fff;
+}
+
+.active-nav {
+  position: relative;
+}
+.active-nav__bar {
+  background-color: #0E9FD8;
+  top: 1em;
+  position: absolute;
+  width: 33.33333%;
+  height: 0.5em;
+  transition: 0.3s ease-in-out;
+}
+.show-0 .active-nav__bar {
+  transform: translate3d(0, 0, 0);
+}
+.show-1 .active-nav__bar {
+  transform: translate3d(100%, 0, 0);
+}
+.show-2 .active-nav__bar {
+  transform: translate3d(200%, 0, 0);
+}
+
+.carousel {
+  min-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  -webkit-transform-style: preserve-3d;
+  margin: 3em auto 0;
+  overflow: hidden;
+}
+.carousel > ul {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  list-style: none outside;
+  margin: 0;
+  overflow: hidden;
+}
+.carousel > ul.animate {
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transition: 0.3s ease-in-out;
+}
+.carousel > ul > li {
+  height: 100%;
+  float: left;
+  transform: translate3d(0, 0, 0);
+}
+
+.main-hearder-bar{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.page {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 10em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* header {
+    background: white(0.5);
+    padding: 1em;
+    text-shadow: 1px 1px 3px black(0.3);
+
+    h1 {
+
+    }
+  } */
+}
+.page.page-left {
+  
+  left: -100%;
+}
+
+.page.page-right {
+  background-image: url(https://c3.staticflickr.com/3/2922/14402577354_af56e71312_c.jpg);
+  left: 100%;
+}
+
+.page-header {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.page-header__title {
+  font-size: 3em;
+}
+
+.articles {
+  margin: 1em 0 0;
+}
+.articles li {
+  margin-bottom: 1em;
+}
+
+article {
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-flow: column wrap;
+}
+article > div {
+  flex: 1;
+}
+article > .article-media {
+  background-color: #222;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 12em;
+  height: 25vh;
+  flex: 0 1 30%;
+  min-width: 8em;
+  position: relative;
+}
+article > .article-media:after {
+  background-color: rgba(4, 42, 57, 0.25);
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.articles > :nth-child(1) article > .article-media {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/190822/horse-bw-640x480.jpg");
+}
+
+.articles > :nth-child(3) article > .article-media {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/190822/rhino-bw-640x480.jpg");
+}
+article .more:after {
+  display: "inline";
+  content: " »";
+}
+
+/*
+* Utils
+*/
+.l-pad-content {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/*
+* Responsive
+*/
+@media (min-width: 40em) {
+  article {
+    flex-direction: row;
+  }
+  article .article-media {
+    height: auto;
+  }
+  
+  /*=================*/
+
+}
+
+/* 폰트적용 - 시작 */
+@font-face {
+  font-family: "LotteMartDream";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2")
+      format("woff2"),
+    url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "LotteMartDream";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2")
+      format("woff2"),
+    url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "LotteMartDream";
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2")
+      format("woff2"),
+    url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff")
+      format("woff");
+}
+
+html > body {
+  font-family: "LotteMartDream", sans-serif;
+}
+/* 폰트적용 - 끝 */
+
+/* 유틸 - 시작 */
+.row-span-7 {
+  grid-row: span 7 / span 7;
+}
+
+.row-span-8 {
+  grid-row: span 8 / span 8;
+}
+
+.touch-imposible .invisible-scrollbar-box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.grid-item-float {
+  grid-template-columns: repeat(auto-fit, minmax(0, max-content));
+}
+
+.item-bt-1 > * {
+  border-top: 1px solid #afafaf;
+}
+
+.item-bb-1-not-last-child > *:not(:last-child) {
+  border-bottom: 1px solid #afafaf;
+}
+
+.title-bar-type-2 {
+  font-size:1.1rem;
+  padding-top:5px;
+  padding-bottom:5px;
+  margin-top:20px;
+  margin-bottom:15px;
+  border:solid #5555;
+  border-width:2px 0;
+}
+
+.title-bar-type-2:first-child {
+  margin-top:0;
+}
+
+.form-control .plain-text {
+  padding: 0 0.25rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.plain-link-wrap.gap-2 > *:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.plain-link-wrap.gap-3 > *:not(:last-child) {
+  margin-right: 0.75rem;
+}
+
+.form-type-1 {
+  gap: 10px;
+}
+
+.btn-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-wrap.gap-1 > *:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+.btn-wrap.gap-2 > *:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.btn-wrap.gap-3 > *:not(:last-child) {
+  margin-right: 0.75rem;
+}
+
+:root {
+  --card-title_height: 40px;
+  --card-title_left-btn-cell-width: 50px;
+}
+
+.card-title {
+  background-color: rgb(87, 13, 248);
+  color: white;
+  text-align: center;
+  height: var(--card-title_height);
+  position: absolute;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: var(--card-title_left-btn-cell-width) auto var(
+      --card-title_left-btn-cell-width
+    );
+}
+
+.card-title + * {
+  margin-top: var(--card-title_height);
+}
+
+html > body .plain-link {
+  color: rgb(59, 130, 246);
+}
+
+html > body .plain-link:hover {
+  text-decoration: underline;
+}
+
+.max-h-18 {
+  max-height: calc(0.25rem * 18);
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+/* 유틸 - 끝 */
+
+/* 기타 - 시작 */
+.component-title-bar {
+  border: solid black;
+  border-width: 2px 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+/* 기타 - 끝 */
+
+@media (max-width: 640px) {
+  .sm\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+}
+
+
+/* 탑바 시작 */
+:root {
+  --top-bar__color-1:#f1f1f1;
+}
+
+.top-bar {
+  /* .bg-white */
+  background-color:white;
+  
+  /* .shadow-lg */
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  
+  height: 3rem;
+}
+
+.top-bar + * {
+  padding-top: 4rem;
+}
+
+/* 탑바 - 메뉴 박스 시작 */
+.top-bar .menu-box-1 {
+  overflow-x:auto;
+}
+
+/* 탑바 - 메뉴 박스 - 터치 불가능한 경우 스크롤바 제거 */
+.touch-imposible .menu-box-1::-webkit-scrollbar
+{
+  width: 0;
+  height: 0;
+}
+
+/* 탑바 - 메뉴 박스 - 더보기 그림자 시작 */
+.top-bar .container {
+  position:relative;
+}
+
+.top-bar .container::after {
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:40px;
+  height:100%;
+  background-image:linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+  pointer-events:none;
+}
+/* 탑바 - 메뉴 박스 - 더보기 그림자 끝 */
+
+/* 탑바 - 메뉴 박스 - 아이템 시작 */
+.top-bar .menu-box-1 ul > li > a > span {
+  white-space:nowrap;
+}
+
+.top-bar .menu-box-1 ul > li:hover > a {
+  background-color:var(--top-bar__color-1);
+}
+/* 탑바 - 메뉴 박스 - 아이템 끝 */
+
+/* 탑바 - 메뉴 박스 - 2차 메뉴 시작 */
+.top-bar .menu-box-1 > ul > li:hover > div {
+  display:block;
+}
+
+.top-bar .menu-box-1 > ul > li > div {
+  position:fixed;
+  left:0;
+  width:100%;
+  display:none;
+  background-color:white;
+  /* .shadow-lg */
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.top-bar .menu-box-1 > ul > li > div > h1 > a {
+  display:flex;
+  background-color:flex;
+  justify-content:center;
+  padding:.5rem 0;
+  background-color:var(--top-bar__color-1);
+}
+
+.top-bar .menu-box-1 > ul > li > div > ul > li > a {
+  display:flex;
+  background-color:flex;
+  justify-content:center;
+  padding:.5rem 0;
+}
+/* 탑바 - 메뉴 박스 - 2차 메뉴 끝 */
+
+.top-bar--fly {
+  top:0;
+  left:0;
+  width:100%;
+  z-index:50;
+  position:fixed;
+}
+/* 탑바 끝 */
+
+
+
+/*메인*/
+
+
+button.btn {
+  margin-top: 40px;
+  background: #66bb6a;
+  border-radius: 4px;
+}
+
+section:nth-child(1) {
+  background-color: #66bb6a;
+}
+section:nth-child(2), section:nth-child(4) {
+  background-color: #424242;
+}
+section:nth-child(3) {
+  background-color: #a5d6a7;
+}
+
+.fourth button {
+  margin-top: 20px;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+#fp-nav ul li a span {
+  background: #fff;
+}
+
+img {
+  margin: 0 auto;
+}

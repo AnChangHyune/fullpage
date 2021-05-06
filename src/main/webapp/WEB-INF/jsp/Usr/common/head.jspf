@@ -1,0 +1,74 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- 모바일에서 사이트가 PC에서의 픽셀크기 기준으로 작동하게 하기(반응형 하려면 필요) -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- daisyui 불러오기 -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/daisyui@0.14.4/dist/full.css">
+
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+<!-- 제이쿼리 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css"></script>
+<!-- vue -->
+<script src="https://unpkg.com/vue@next"></script>
+
+<!-- END Carousel -->
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.min.js"></script>
+
+<link rel="stylesheet" href="/resource/common.css" />
+<script src="/resource/common.js" defer></script>
+<title>INSTA</title>
+</head>
+<body translate="no" class="show-2">
+	<!-- main nav -->
+	<div class="site-wrap">
+		<nav class="topbar" role="navigation" class="valign-center">
+			<div class="row collapse text-center main-hearder-bar">
+	
+				<!-- Left -->
+				<div class="column small-4">
+					<a href="#" data-nav="" data-show="0"><i
+						class="fa fa-home fa-2x fa-fw"></i></a>
+				</div>
+	
+				<!-- Middle -->
+				<div class="column small-4">
+					<a href="#" data-nav="" data-show="1"><i
+						class="fa fa-globe fa-2x fa-fw"></i></a>
+					
+				</div>
+	
+				<!-- Right -->
+				<div class="column small-4">
+					<a href="#" data-nav="" data-show="2"><i
+						class="fa fa-navicon fa-2x fa-fw"></i></a>
+				</div>
+	
+	
+			</div>
+				<!-- Bar -->
+				<div class="active-nav">
+					<div class="active-nav__bar"></div>
+				</div>
+		</nav>
+	</div>
